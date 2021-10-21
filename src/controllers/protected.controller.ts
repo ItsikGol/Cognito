@@ -42,8 +42,8 @@ class ProtectedController {
       region: 'us-east-1' // Region
     });
 
-    var idTo= ''
-    var acessTo= ''
+    var idTo= ''      /* required - get this idToken from sign-in function (by AWS)*/
+    var acessTo= ''   /* required - get this accessToken from sign-in function (by AWS)*/
 
     console.log('******************************')
 
