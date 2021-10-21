@@ -2,15 +2,15 @@ import AWS from 'aws-sdk';
 import crypto from 'crypto'
 
 export default class Cognito {
-  
+
   private config = {
     apiVersion: '2021-9-29',
     region: 'us-east-1',
   }
-  private secretHash = '10e3fm8g3slnonu65qqmbgkplpgan7789tg317sqakdiqjrb1sn2'
-  private clientId = '2or3uq8vf7delsuuq62fdl8m4';
+  private secretHash = process.env.SecretHash
+  private clientId = process.env.ClientId
 
-  public cognitoIdentity;
+  public cognitoIdentity : AWS.CognitoIdentityServiceProvider;
 
   constructor(){
     this.cognitoIdentity = new AWS.CognitoIdentityServiceProvider(this.config)
